@@ -1,0 +1,209 @@
+/* ————————————————————————
+   GLOBAL LAYOUT
+   ———————————————————————— */
+
+body {
+  margin: 0;
+  font-family:jetbrains mono, monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f8f8f8;     /* FA vibe: off-white background */
+  color: #111;
+  line-height: 1.6;
+}
+
+.site-wrapper {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Horizontal rule style — FA uses subtle lines */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 70px 0;
+}
+
+
+
+/* ————————————————————————
+   HERO SECTION (FA STYLE)
+   ———————————————————————— */
+
+.hero {
+  display: flex;;
+  padding: 120px 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-main {
+  width: 40vw;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  margin-top: 15vh;
+  font-size: 2rem;
+  font-weight: 700;
+  max-width: 850px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  max-width: 750px;
+  color: #333;
+}
+
+
+
+/* ————————————————————————
+   SECTIONS
+   ———————————————————————— */
+
+.section {
+  padding: 20px 0;
+}
+
+.section h2 {
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #111;
+ 
+}
+.section p {
+ text-align: justify;
+ word-spacing: -5px;
+}
+
+
+
+/* ————————————————————————
+   PROJECTS GRID (FA STYLE)
+   ———————————————————————— */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.project-card {
+  border-top: 1px solid #ccc;     /* FA-style thin line */
+  padding-top: 25px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.project-image {
+  width: 100%;
+  height: 50;
+  margin-bottom: 15px;
+}
+
+.project-card:hover {
+  opacity: 0.7;
+  transform: translateY(-3px);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.project-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #444;
+}
+
+
+
+/* ————————————————————————
+   PUBLICATIONS
+   ———————————————————————— */
+
+.pub-list {
+  margin-top: 30px;
+}
+
+.pub-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.pub-item h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.pub-meta {
+  margin-top: 5px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+
+
+/* ————————————————————————
+   FOOTER
+   ———————————————————————— */
+
+.footer {
+  padding: 60px 0 80px;
+  margin-top: 120px;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+.logo-footer {
+  width: 150px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  color: #555;
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+/* ————————————————————————
+   MOBILE RESPONSIVE FIXES
+   ———————————————————————— */
+
+@media (max-width: 768px) {
+
+  /* HERO becomes vertical on mobile */
+  .hero {
+    flex-direction: column;      /* stack items */
+    align-items: center;         /* center content */
+    text-align: center;          /* center text */
+    padding: 60px 0 20px;        /* less spacing */
+  }
+
+  /* Title gets smaller */
+  .hero-title {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    max-width: 100%;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Logo responsive */
+  .logo-main {
+    width: 70vw;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
