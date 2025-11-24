@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Projects from "./components/Projects.jsx";
 import logoEN from "./assets/LOGOCESS2025-01.png";
-import logoAR from "./assets/LOGOCESS2025-01.png";
+import logoAR from "./assets/cessLogo.png";
 import GeometryBar from "./components/GeometryBar.jsx";
 
 import Ticker from "./components/Ticker.jsx";
