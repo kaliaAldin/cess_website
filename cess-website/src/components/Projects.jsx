@@ -4,37 +4,34 @@ import MapImage from "../assets/map_project.png";
 import PublicationImage from "../assets/childLabour.jpg";
 import broadCastImage from "../assets/mine2.png";
 
-export default function Projects() {
+export default function Projects({ text }) {
   return (
     <section className="section projects">
-      <h2>Projects</h2>
+      <h2>{text.heading}</h2>
 
       <div className="project-grid">
 
         <div className="project-card">
           <img src={MapImage} alt="" className="project-image" />
-          <h3>01 — Gold Mining Investigation Map</h3>
+          <h3>01 — {text.project_1.header}</h3>
           <p>
-            A geospatial investigation into the environmental, health, and 
-            social impacts of industrial and artisanal gold mining across Sudan.
+            {text.project_1.body}
           </p>
         </div>
 
         <div className="project-card">
           <img src={broadCastImage} alt="" className="project-image" />
-          <h3>02 — Ecology & Political Economy Broadcast</h3>
+          <h3>02 — {text.project_2.header}</h3>
           <p>
-            A broadcast documenting ecological injustice and shifting political 
-            economies shaping Sudan and the region.
+            {text.project_2.body}
           </p>
         </div>
 
         <div className="project-card">
           <img src={PublicationImage} alt="" className="project-image" />
-          <h3>03 — Research Papers & Publications</h3>
+          <h3>03 — {text.project_3.header} </h3>
           <p>
-            Essays and research on extractivism, ecological colonialism,
-            small arms proliferation, and community-led resistance.
+            {text.project_3.body}
           </p>
         </div>
 

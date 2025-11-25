@@ -14,7 +14,7 @@ body {
   width: 100%;
   max-width: 1450px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 0px;
 }
 
 /* Horizontal rule style — FA uses subtle lines */
@@ -32,18 +32,25 @@ hr {
 
 .hero {
   display: flex;;
-  padding: 120px 0 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 20px 0px 5px;
+  margin-bottom: 10vh;
+  
+  border-bottom:2px solid #ddd;
 }
 
 .logo-main {
-  width: 40vw;
+  width:35vw;
   opacity: 0.9;
-  margin-bottom: 10px;
+  margin-bottom:3vh;
+  margin-top:2vh;
+ margin-right: auto ;
+ margin-bottom: 5vh;
+ object-fit: contain;
+
 }
 
 .hero-title {
-  margin-top: 15vh;
+  margin-top: 16vh;
   font-size: 2rem;
   font-weight: 700;
   max-width: 850px;
@@ -55,6 +62,8 @@ hr {
   font-size: 1.25rem;
   max-width: 750px;
   color: #333;
+  text-align: justify ;
+  word-spacing: -5px;
 }
 
 
@@ -155,21 +164,24 @@ hr {
    ———————————————————————— */
 
 .footer {
-  padding: 60px 0 80px;
-  margin-top: 120px;
+  display: inline;
+  padding: 20px 0 80px;
+  margin-top: 1vh;
   border-top: 1px solid #ddd;
   text-align: left;
 }
 
 .logo-footer {
-  width: 150px;
+  width: 20vw;
   opacity: 0.85;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+ 
+  ;
 }
 
 .footer p {
   color: #555;
-  margin: 4px 0;
+  margin: 2px 0;
   font-size: 0.95rem;
 }
 /* ————————————————————————

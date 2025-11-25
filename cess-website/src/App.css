@@ -26,6 +26,16 @@
     transform: rotate(360deg);
   }
 }
+/* Force GeometryBar and Ticker to stay LTR always */
+.always-ltr {
+  direction: ltr !important;
+  unicode-bidi: isolate !important; /* protects children from RTL mirroring */
+}
+
+.always-ltr * {
+ direction: ltr !important;
+  unicode-bidi: isolate !important; /* protects children from RTL mirroring */
+}
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -39,4 +49,26 @@
 
 .read-the-docs {
   color: #888;
+}
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl p {
+  text-align: right;
+}
+
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 12vw;
+  padding: 6px 14px;
+  background: #0A1E3F;
+  color: rgb(252, 207, 6);
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  font-size: large;
+  font-family: jetbrains-mono, monospace;
 }
