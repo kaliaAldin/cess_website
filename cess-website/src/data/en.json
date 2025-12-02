@@ -1,58 +1,58 @@
 {
-    "hero": {
-        "title": "CENTER FOR ENVIRONMENTAL & SOCIAL STUDIES",
-        "text": "A world where resources are stewarded for the collective good, where communities reclaim their rights to land, water, and self-determination. Our movement is شعبي (of the people), أهلي (rooted in community), and global in solidarity.We harness the power of technology, art, research, and grassroots organizing to amplify voices, expose injustices, and build alternatives."
+  "hero": {
+    "title": "CENTER FOR ENVIRONMENTAL & SOCIAL STUDIES",
+    "text": "A world where resources are stewarded for the collective good, where communities reclaim their rights to land, water, and self-determination. Our movement is شعبي (of the people), أهلي (rooted in community), and global in solidarity. We harness the power of technology, art, research, and grassroots organizing to amplify voices, expose injustices, and build alternatives."
+  },
+  "about": {
+    "heading": "About CESS",
+    "body": "The Center for Environmental and Social Studies (CESS) is conceived as a critical knowledge organization that seeks to expand legal literacy, strengthen public accountability, and deepen structural transparency within Sudan’s extractive sectors—fields historically shaped by dispossession, militarization, and opaque political–economic arrangements. Our work extends across strategically exploited resources, including water, energy, gold, and land. As a research collective, CESS is committed to advancing social justice and confronting the ecological and economic violences embedded in extractivist regimes. We work to produce and democratize knowledge, defend environmental and human rights, and support communities facing displacement, exploitation, and systemic marginalization. Built through collaboration and solidarity across research institutions, civil society, and grassroots networks, CESS provides access to investigative studies, specialized reports, and emerging analyses. We create spaces for engagement between affected communities, activists, scholars, and practitioners. Our aim is not merely to inform but to intervene—to amplify marginalized voices, contest extractive power structures, and contribute to alternative development pathways grounded in justice and collective autonomy. We encourage users to connect with us, participate, critique, and collaborate; these interactions are crucial for strengthening public consciousness, expanding community agency, and ensuring that struggles around resource governance reach wider audiences. In the face of intensifying threats posed by Sudan’s extractive economy—and amid expanding possibilities in digital media—building accessible and reliable knowledge infrastructures has become essential. This platform offers counter-narratives to dominant state and corporate discourses, supports community organizing, and helps expose the political and ecological costs of extractivism in Sudan."
+  },
+  "projects": {
+    "heading": "Projects",
+    "project_1": {
+      "header": "Gold mining investgation map",
+      "body": "A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
     },
-    "about": {
-        "heading": "About CESS",
-        "body": "cess-sudan.com is conceived as a critical knowledge platform that seeks to expand legal literacy, public accountability, and structural transparency within Sudan’s mining sector—an arena historically shaped by dispossession, militarized extraction, and opaque political–economic arrangements. Its scope is intentionally open-ended, with the aim of extending its analysis to other strategically exploited resources, including water, energy, and land. The platform is an initiative of the Center for Environmental and Social Studies (CESS), a Sudanese research collective committed to advancing social justice and countering the ecological and economic violences embedded in extractivist regimes. CESS works to produce and democratize knowledge, defend environmental and human rights, and support communities confronting displacement, exploitation, and systemic marginalization. Built through collaborative efforts and solidarities across research, civil society, and grassroots networks, the platform provides access to current news, investigative studies, and specialized reports. It also creates a space for engaging with affected communities, activists, scholars, and practitioners. Our aim is not merely to “inform,” but to intervene—to amplify subordinated voices, contest extractive power structures, and provide resources that can contribute to alternative development trajectories grounded in justice and collective autonomy. We encourage users to connect with us through these channels, to participate, critique, and build with us. We regard these interactions as essential for strengthening public consciousness, expanding community agency, and ensuring that struggles around resource governance reach a broader public. Given the intensifying threats posed by Sudan’s mining economy—marked by militarization, corruption, and environmental destruction—and given the expanding possibilities of digital media, establishing accessible and reliable online infrastructures has become indispensable. Such platforms offer counter-narratives to dominant state and corporate discourses, support community organizing, and help expose the political and ecological costs of extractivism in Sudan."
+    "project_2": {
+      "header": "Ecology & Political Economy Broadcast",
+      "body": "A broadcast documenting ecological injustice and shifting political economies shaping Sudan and the region."
     },
-    "projects": {
-        "heading": "Projects",
-        "project_1":{
-            "header":"Gold mining investgation map",
-            "body":" A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
-        },
-        "project_2":{
-            "header":"Ecology & Political Economy Broadcast",
-            "body":" A broadcast documenting ecological injustice and shifting political economies shaping Sudan and the region."
-        },
-        "project_3":{
-            "header":"Blog and Readings",
-            "body":" we invite exprerts, activists, and community members to contribute articles, essays, and multimedia content that shed light on issues of environmental and social justice in Sudan."
-        },
-        "project_4":{
-            "header":"Gold mining investgation map",
-            "body":" A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
-        },
-        "project_5":{
-            "header":"Gold mining investgation map",
-            "body":" A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
-        },
-        "project_6":{
-            "header":"Gold mining investgation map",
-            "body":" A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
-        }
+    "project_3": {
+      "header": "Blog and Readings",
+      "body": "We invite experts, activists, and community members to contribute articles, essays, and multimedia content that shed light on issues of environmental and social justice in Sudan."
     },
-    "publications": {
-        "heading":"Publications",
-        "publication_1":{
-            "header":"Fuel of War and Resource Depletion",
-            "description":"Research paper",
-            "year":"2024",
-            "link":"/pdfs/Fuel of War and Resource Depletion.pdf"
-        },
-        "publication_2":{
-            "header":"Fuel of War and Resource Depletion",
-            "description":"Research paper-Coming Soon",
-            "year":"2025",
-            "link":"comiming soon"
-        },
-        "publication_3":{
-            "header":"Fuel of War and Resource Depletion",
-            "description":"Research paper-Coming Soon",
-            "year":"2025",
-            "link":"comiming soon"
-        }
+    "project_4": {
+      "header": "CONFLICT GOLD",
+      "body": "Sudan’s gold sector has become central to the dynamics of the current war, shaping patterns of violence, displacement, and illicit trade. More than 80% of Sudan’s gold is produced by artisanal and unregulated miners, yet both “legal” and “illegal” actors operate within the same networks. Armed groups, private companies, and regional intermediaries benefit from this hybrid system, while international sanctions have failed to disrupt the underlying structures that finance the conflict. Despite widespread recognition of these dynamics, Sudanese gold is still not formally recognized as “conflict gold” in global supply chains. Through this project, CESS brings together affected communities, technical experts, legal practitioners, and civil society organizations to build a unified evidence base and advance a coordinated advocacy campaign. The initiative documents the links between gold extraction and conflict—including land dispossession, child labor, unsafe working conditions, and smuggling—and aligns this analysis with international conflict-mineral standards. The project’s goal is to establish Sudan’s gold as “conflict gold” at the global level, strengthen accountability mechanisms, and amplify the voices of miners and communities most affected by extraction. By supporting local-led knowledge production and developing an international advocacy network, the campaign seeks to promote transparency, disrupt war-financing channels, and contribute to broader pathways toward peace and economic justice in Sudan."
+    },
+    "project_5": {
+      "header": "Gold mining investgation map",
+      "body": "A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
+    },
+    "project_6": {
+      "header": "Gold mining investgation map",
+      "body": "A geospatial investigation into the environmental, political, and social impacts of industrial and artisanal gold mining across Sudan."
     }
+  },
+  "publications": {
+    "heading": "Publications",
+    "publication_1": {
+      "header": "Fuel of War and Resource Depletion",
+      "description": "Research paper",
+      "year": "2024",
+      "link": "/pdfs/Fuel of War and Resource Depletion.pdf"
+    },
+    "publication_2": {
+      "header": "Fuel of War and Resource Depletion",
+      "description": "Research paper-Coming Soon",
+      "year": "2025",
+      "link": "coming soon"
+    },
+    "publication_3": {
+      "header": "Fuel of War and Resource Depletion",
+      "description": "Research paper-Coming Soon",
+      "year": "2025",
+      "link": "coming soon"
+    }
+  }
 }

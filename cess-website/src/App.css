@@ -1,74 +1,220 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ——————————————————————————
+   HERO
+—————————————————————————— */
+
+.hero {
+  display: flex;
+  padding: 20px 0 5px;
+  margin-bottom: 10vh;
+  border-bottom: 2px solid #ddd;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.logo-main {
+  width: 40vw;
+  opacity: 0.9;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  margin-left: 12px;
+  object-fit: contain;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* Force GeometryBar and Ticker to stay LTR always */
-.always-ltr {
-  direction: ltr !important;
-  unicode-bidi: isolate !important; /* protects children from RTL mirroring */
+.hero-title {
+  margin-top: 16vh;
+  font-size: 2rem;
+  font-weight: 700;
+  max-width: 850px;
+  color: #111;
 }
 
-.always-ltr * {
- direction: ltr !important;
-  unicode-bidi: isolate !important; /* protects children from RTL mirroring */
+.hero-text {
+  font-size: 1.25rem;
+  max-width: 750px;
+  color: #333;
+  text-align: justify;
+  word-spacing: -10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ——————————————————————————
+   SECTIONS
+—————————————————————————— */
+
+.section {
+  padding: 20px 0;
 }
 
-.card {
-  padding: 2em;
+.section h2 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.read-the-docs {
-  color: #888;
-}
-.rtl {
-  direction: rtl;
-  text-align: right;
+/* ——————————————————————————
+   PROJECT GRID
+—————————————————————————— */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl p {
-  text-align: right;
+.project-card {
+  border-top: 1px solid #ccc;
+  padding-top: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
+.project-image {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.project-card:hover {
+  opacity: 0.7;
+  transform: translateY(-3px);
+}
+
+.see-more-btn {
+  margin-top: 10px;
+  background: #0A1E3F;
+  color: rgb(252, 207, 6);
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+/* ——————————————————————————
+   PUBLICATIONS
+—————————————————————————— */
+
+.pub-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ——————————————————————————
+   FOOTER
+—————————————————————————— */
+
+.footer {
+  padding: 20px 0 80px;
+  margin-top: 2vh;
+  border-top: 1px solid #ddd;
+}
+
+.logo-footer {
+  width: 20vw;
+  opacity: 0.85;
+}
+
+/* ——————————————————————————
+   LANGUAGE SWITCH
+—————————————————————————— */
 
 .lang-switch {
   position: fixed;
-  top: 20px;
-  right: 12vw;
+  top: 5px;
+  right: 10vw;
   padding: 6px 14px;
   background: #0A1E3F;
   color: rgb(252, 207, 6);
   border: none;
   cursor: pointer;
-  z-index: 2000;
   font-size: large;
-  font-family: jetbrains-mono, monospace;
+  z-index: 2000;
+}
+
+/* ——————————————————————————
+   HAMBURGER MENU
+—————————————————————————— */
+
+.top-buttons {
+  position: fixed;
+  top: 11vh;   /* ← increase this number */
+  right: 4vw;
+  display: flex;
+  gap: 10px;
+  z-index: 99999;
+}
+
+
+.menu-btn,
+.menu-dropdown button {
+ 
+ 
+  font-size: 1.5rem !important;
+  font-family: 'JetBrains Mono', monospace !important;
+   color: rgb(252, 207, 6) !important;
+}
+.menu-btn {
+  top: 10vh !important  ;
+  font-size: 2rem;
+  background: none;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.menu-dropdown {
+  position: fixed;
+  height: 12vh;
+  top: 8.5vw;
+  opacity: 0.8;
+  right: 4vw;
+  background: #0A1E3F;
+  color: rgb(252, 207, 6) !important;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 99998;
+}
+
+.menu-dropdown button {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 10vh !important;
+}
+
+.menu-dropdown button:hover {
+  opacity: 0.7;
+}
+
+
+/* RTL flip for menu */
+
+
+/* ——————————————————————————
+   MOBILE
+—————————————————————————— */
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .logo-main {
+    width: 100vw;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    margin-top: 20px;
+    font-size: 1.6rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
 }

@@ -3,7 +3,7 @@ import "../App.css";
 
 export default function Publications({text}) {
   return (
-  <section className="section publications">
+  <section id="publications" className="section publications">
         <h2>{text.heading}</h2>
 
         <div className="pub-list">
