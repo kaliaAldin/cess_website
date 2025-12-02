@@ -117,8 +117,8 @@
 
 .lang-switch {
   position: fixed;
-  top: 5px;
-  right: 10vw;
+  top: 5vh;
+  right: 4vw;
   padding: 6px 14px;
   background: #0A1E3F;
   color: rgb(252, 207, 6);
