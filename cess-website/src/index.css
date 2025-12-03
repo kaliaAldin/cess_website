@@ -1,8 +1,15 @@
 /* index.css — GLOBAL ONLY */
 
-body {
+html, body {
   margin: 0;
-  font-family: jetbrains mono, monospace, 'Droid Arabic Kufi', sans-serif;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: jetbrains mono, monospace, 'Amiri', sans-serif;
   background-color: #f1efd6;
   color: #111;
   line-height: 1.6;
@@ -15,21 +22,23 @@ body {
   padding: 0;
 }
 
-/* RTL GENERAL */
+/* RTL */
 .rtl {
   direction: rtl;
   text-align: right;
+  font-family: 'Amiri', sans-serif !important;
 }
 
 .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl p {
   text-align: right;
 }
 
-/* Prevent RTL on sticky elements */
+/* Prevent RTL on sticky bars */
 .always-ltr {
   direction: ltr !important;
   unicode-bidi: isolate !important;
 }
+
 .always-ltr * {
   direction: ltr !important;
   unicode-bidi: isolate !important;

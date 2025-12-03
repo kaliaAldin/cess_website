@@ -7,7 +7,9 @@
   padding: 20px 0 5px;
   margin-bottom: 10vh;
   border-bottom: 2px solid #ddd;
+  gap: 30px;
 }
+
 
 .logo-main {
   width: 40vw;
@@ -31,7 +33,7 @@
   max-width: 750px;
   color: #333;
   text-align: justify;
-  word-spacing: -10px;
+  word-spacing: -2px ;
 }
 
 /* ——————————————————————————
@@ -46,6 +48,13 @@
   font-size: 2.1rem;
   font-weight: 600;
   margin-bottom: 10px;
+}
+.section p {
+  font-size: 1.2rem;
+  color: #444;
+  text-align: justify;
+ 
+  
 }
 
 /* ——————————————————————————
@@ -94,6 +103,8 @@
 .pub-item {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
+  
+  font-size: larger;
 }
 
 /* ——————————————————————————
@@ -109,6 +120,10 @@
 .logo-footer {
   width: 20vw;
   opacity: 0.85;
+  align-items: first baseline;
+  object-fit: contain;
+  
+  
 }
 
 /* ——————————————————————————
@@ -118,7 +133,7 @@
 .lang-switch {
   position: fixed;
   top: 5vh;
-  right: 4vw;
+  right: 2vw;
   padding: 6px 14px;
   background: #0A1E3F;
   color: rgb(252, 207, 6);
@@ -132,62 +147,91 @@
    HAMBURGER MENU
 —————————————————————————— */
 
+/* ——————————————————————————
+   HAMBURGER MENU (RESPONSIVE)
+—————————————————————————— */
+
 .top-buttons {
   position: fixed;
-  top: 11vh;   /* ← increase this number */
-  right: 4vw;
+  top: 11vh;
+  right: 2vw;
   display: flex;
   gap: 10px;
   z-index: 99999;
 }
 
-
-.menu-btn,
-.menu-dropdown button {
- 
- 
-  font-size: 1.5rem !important;
-  font-family: 'JetBrains Mono', monospace !important;
-   color: rgb(252, 207, 6) !important;
-}
 .menu-btn {
-  top: 10vh !important  ;
   font-size: 2rem;
   background: none;
   border: 1px solid #333;
   padding: 6px 10px;
   cursor: pointer;
   font-family: 'JetBrains Mono', monospace !important;
+  color: rgb(252, 207, 6);
 }
 
+/* Dropdown (auto height + responsive width) */
 .menu-dropdown {
   position: fixed;
-  height: 12vh;
-  top: 8.5vw;
-  opacity: 0.8;
+  top: calc(11vh + 50px);
   right: 4vw;
+
   background: #0A1E3F;
-  color: rgb(252, 207, 6) !important;
+  color: rgb(252, 207, 6);
   border: 1px solid #ddd;
-  padding: 10px 15px;
+  padding: 12px 18px;
+
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
   z-index: 99998;
+
+  width: auto;
+  max-width: 90vw;
+
+  white-space: nowrap;
+  overflow-x: hidden;
+
+  height: auto;
+  opacity: 0.95;
 }
 
+
+
+/* Dropdown buttons */
 .menu-dropdown button {
   font-family: 'JetBrains Mono', monospace !important;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: rgb(252, 207, 6);
   background: none;
   border: none;
   cursor: pointer;
-  height: 10vh !important;
+  height: auto;
+  padding: 6px 0;
+   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu-dropdown button:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
+/* English spacing (LTR) */
+.site-wrapper:not(.rtl) p,
+.site-wrapper:not(.rtl) .hero-text {
+  word-spacing: -8px;        /* normal English spacing */
+  letter-spacing: 0px;      /* keep letters normal */
+}
+
+/* Arabic spacing (RTL) */
+.site-wrapper.rtl p,
+.site-wrapper.rtl .hero-text {
+  word-spacing: 2px;        /* Arabic prefers *more* spacing */
+  letter-spacing: 0.5px;    /* slightly more readable */
+  line-height: 1.8;         /* Arabic needs more line height */
+}
+
+
 
 
 /* RTL flip for menu */
@@ -217,4 +261,6 @@
   .hero-text {
     font-size: 1rem;
   }
+
+
 }

@@ -11,7 +11,7 @@ import About from "./components/About.jsx";
 import Projects from "./components/Projects.jsx";
 import Publications from "./components/Publications.jsx";
 import Footer from "./components/Footer.jsx";
-import GeometryBar from "./components/GeometryBar.jsx";
+import GeometryBar from "./components/GeometryBar.Jsx";
 import Ticker from "./components/Ticker.jsx";
 
 export default function App() {

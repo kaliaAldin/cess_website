@@ -1,22 +1,33 @@
-/* Container for the geometry line */
+/* Geometry bar */
 .geometry-bar {
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
-  gap: 20px;
+  gap: 12px;
   padding: 12px 20px;
-  background: #f1efd6; /* same background as your site */
+  background: #f1efd6;
   border-bottom: 1px solid #ddd;
-  
+
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-/* Each geometric shape */
+/* Shapes */
 .shape {
   display: inline-block;
+  flex-shrink: 0;
+  transform-origin: center;
+  animation: roll 6s linear infinite;
 }
 
-/* DOT */
+.shape:nth-child(2) { animation-duration: 8s; }
+.shape:nth-child(3) { animation-duration: 5s; }
+.shape:nth-child(4) { animation-duration: 9s; }
+.shape:nth-child(5) { animation-duration: 7s; }
+
+/* Dot */
 .shape.dot {
   width: 8px;
   height: 8px;
@@ -24,14 +35,14 @@
   border-radius: 50%;
 }
 
-/* SQUARE */
+/* Square */
 .shape.square {
   width: 10px;
   height: 10px;
   background: #111;
 }
 
-/* LINE */
+/* Line */
 .shape.line {
   width: 30px;
   height: 2px;
@@ -39,7 +50,7 @@
   margin-top: 4px;
 }
 
-/* TRIANGLE */
+/* Triangle */
 .shape.triangle {
   width: 0;
   height: 0;
@@ -48,32 +59,9 @@
   border-bottom: 10px solid #111;
   margin-top: 2px;
 }
-/* Rolling animation */
+
+/* Rotation animation */
 @keyframes roll {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-
-/* Apply rotation to shapes */
-.shape {
-  animation: roll 6s linear infinite;
-}
-
-/* Make each shape rotate slightly differently */
-.shape:nth-child(2) {
-  animation-duration: 8s;
-}
-.shape:nth-child(3) {
-  animation-duration: 5s;
-}
-.shape:nth-child(4) {
-  animation-duration: 9s;
-}
-.shape:nth-child(5) {
-  animation-duration: 7s;
-}
-

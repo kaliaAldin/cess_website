@@ -21,7 +21,13 @@ export default function Publications({text}) {
 
           <div className="pub-item">
             <h4>{text.publication_2.header}</h4>
-            <span className="pub-meta">{text.publication_2.description} — {text.publication_2.year}</span>
+            <a 
+  href={text.publication_2.link} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="pdf-link"
+>
+            <span className="pub-meta">{text.publication_2.description} — {text.publication_2.year}</span></a>
           </div>
         </div>
       </section>
