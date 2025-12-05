@@ -33,7 +33,8 @@
   max-width: 750px;
   color: #333;
   text-align: justify;
-  word-spacing: -2px ;
+  word-spacing: -5px;
+  
 }
 
 /* ——————————————————————————
@@ -50,9 +51,10 @@
   margin-bottom: 10px;
 }
 .section p {
-  font-size: 1.2rem;
+  font-size: 1.5 rem;
   color: #444;
   text-align: justify;
+ 
  
   
 }
@@ -142,6 +144,53 @@
   font-size: large;
   z-index: 2000;
 }
+/* CONTACT FORM */
+.contact-form {
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 4px;
+}
+
+
+.send-btn {
+  background: #0A1E3F;
+  color: #F4C229;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+
+.send-btn:hover {
+  opacity: 0.8;
+}
+
+.success {
+  color: green;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+a {
+  color: #F4C229;
+
+}
+
 
 /* ——————————————————————————
    HAMBURGER MENU
@@ -219,8 +268,10 @@
 /* English spacing (LTR) */
 .site-wrapper:not(.rtl) p,
 .site-wrapper:not(.rtl) .hero-text {
-  word-spacing: -8px;        /* normal English spacing */
-  letter-spacing: 0px;      /* keep letters normal */
+  word-spacing: -5px;        /* normal English spacing */
+  letter-spacing: 0px; 
+  text-align: left; 
+  font-size: 1.2rem;    /* keep letters normal */
 }
 
 /* Arabic spacing (RTL) */
@@ -228,7 +279,10 @@
 .site-wrapper.rtl .hero-text {
   word-spacing: 2px;        /* Arabic prefers *more* spacing */
   letter-spacing: 0.5px;    /* slightly more readable */
-  line-height: 1.8;         /* Arabic needs more line height */
+  line-height: 1.8;  
+  text-align: right; 
+  font-size: 1.4rem;   
+  font-family: 'Noto Sans Arabic', sans-serif; /* Arabic needs more line height */
 }
 
 
@@ -249,8 +303,9 @@
   }
 
   .logo-main {
-    width: 100vw;
+    width: 90vw;
     margin-bottom: 10px;
+    margin-top: 0;
   }
 
   .hero-title {

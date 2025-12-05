@@ -5,7 +5,7 @@
   },
   "about": {
     "heading": "About CESS",
-    "body": "The Center for Environmental and Social Studies (CESS) is conceived as a critical knowledge organization that seeks to expand legal literacy, strengthen public accountability, and deepen structural transparency within Sudan’s extractive sectors—fields historically shaped by dispossession, militarization, and opaque political–economic arrangements. Our work extends across strategically exploited resources, including water, energy, gold, and land. As a research collective, CESS is committed to advancing social justice and confronting the ecological and economic violences embedded in extractivist regimes. We work to produce and democratize knowledge, defend environmental and human rights, and support communities facing displacement, exploitation, and systemic marginalization. Built through collaboration and solidarity across research institutions, civil society, and grassroots networks, CESS provides access to investigative studies, specialized reports, and emerging analyses. We create spaces for engagement between affected communities, activists, scholars, and practitioners. Our aim is not merely to inform but to intervene—to amplify marginalized voices, contest extractive power structures, and contribute to alternative development pathways grounded in justice and collective autonomy. We encourage users to connect with us, participate, critique, and collaborate; these interactions are crucial for strengthening public consciousness, expanding community agency, and ensuring that struggles around resource governance reach wider audiences. In the face of intensifying threats posed by Sudan’s extractive economy—and amid expanding possibilities in digital media—building accessible and reliable knowledge infrastructures has become essential. This platform offers counter-narratives to dominant state and corporate discourses, supports community organizing, and helps expose the political and ecological costs of extractivism in Sudan."
+    "body": "The Center for Environmental and Social Studies (CESS) is conceived as a critical knowledge organization that seeks to expand legal literacy, strengthen public accountability, and deepen structural transparency within Sudan’s extractive sectors—fields historically shaped by dispossession, militarization, and opaque-political–economic arrangements. Our work extends across strategically exploited resources, including water, energy, gold, and land. As a research collective, CESS is committed to advancing social justice and confronting the ecological and economic violences embedded in extractivist regimes. We work to produce and democratize knowledge, defend environmental and human rights, and support communities facing displacement, exploitation, and systemic marginalization. Built through collaboration and solidarity across research institutions, civil society, and grassroots networks, CESS provides access to investigative studies, specialized reports, and emerging analyses. We create spaces for engagement between affected communities, activists, scholars, and practitioners. Our aim is not merely to inform but to intervene—to amplify marginalized voices, contest extractive power structures, and contribute to alternative development pathways grounded in justice and collective autonomy. We encourage users to connect with us, participate, critique, and collaborate; these interactions are crucial for strengthening public consciousness, expanding community agency, and ensuring that struggles around resource governance reach wider audiences. In the face of intensifying threats posed by Sudan’s extractive economy—and amid expanding possibilities in digital media—building accessible and reliable knowledge infrastructures has become essential. This platform offers counter-narratives to dominant state and corporate discourses, supports community organizing, and helps expose the political and ecological costs of extractivism in Sudan."
   },
   "projects": {
     "heading": "Projects",
@@ -56,5 +56,14 @@
       "year": "2025",
       "link": "coming soon"
     }
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "email": "Your Email",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again."
   }
+
 }

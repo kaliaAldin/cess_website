@@ -13,6 +13,8 @@ import Publications from "./components/Publications.jsx";
 import Footer from "./components/Footer.jsx";
 import GeometryBar from "./components/GeometryBar.Jsx";
 import Ticker from "./components/Ticker.jsx";
+import Contact from "./components/contact.jsx";
+<link href='https://fonts.googleapis.com/css?family=Noto Sans Arabic' rel='stylesheet'></link>
 
 export default function App() {
 
@@ -71,6 +73,10 @@ export default function App() {
           <button onClick={() => scrollToSection("publications")}>
             {lang === "en" ? "Publications" : "المنشورات"}
           </button>
+          <button onClick={() => scrollToSection("contact")}>
+      {lang === "en" ? "Contact Us" : "تواصل معنا"}
+    </button>
+
         </div>
       )}
 
@@ -79,6 +85,7 @@ export default function App() {
       <About text={t.about} lang={lang} />
       <Projects text={t.projects} lang={lang} />
       <Publications text={t.publications} lang={lang} />
+      <Contact text={t.contact} lang={lang} />
       <Footer text={t.footer} lang={lang} />
     </div>
   );
