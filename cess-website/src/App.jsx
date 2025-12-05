@@ -11,7 +11,7 @@ import About from "./components/About.jsx";
 import Projects from "./components/Projects.jsx";
 import Publications from "./components/Publications.jsx";
 import Footer from "./components/Footer.jsx";
-import GeometryBar from "./components/GeometryBar.Jsx";
+import GeometryBar from "./components/GeometryBar.jsx";
 import Ticker from "./components/Ticker.jsx";
 import Contact from "./components/contact.jsx";
 <link href='https://fonts.googleapis.com/css?family=Noto Sans Arabic' rel='stylesheet'></link>
