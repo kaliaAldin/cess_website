@@ -7,15 +7,14 @@
   </head>
 
   <body>
-    <!-- CMS ROOT -->
     <div id="nc-root"></div>
 
-    <!-- Disable Netlify Identity -->
     <script>
+      // FORCE CMS TO IGNORE NETLIFY IDENTITY
       window.netlifyIdentity = null;
+      window.CMS_ENV = { GITHUB_OAUTH: true };
     </script>
 
-    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </body>
 </html>
