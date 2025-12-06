@@ -3,28 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CESS CMS</title>
+    <title>CESS CMS — Content Manager</title>
   </head>
 
   <body>
-    <!-- Decap CMS core -->
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+    <!-- REQUIRED ROOT for Decap CMS -->
+    <div id="nc-root"></div>
 
-    <!-- FORCE CMS TO LOAD YOUR CONFIG AND GitHub AUTH -->
-    <script>
-      CMS.init({
-        config: {
-          load_config_file: true,
-          backend: {
-            name: "github",
-            repo: "kaliaAldin/cess_website",
-            branch: "main",
-            auth_endpoint: "/admin/oauth/index.php"
-          },
-          media_folder: "public/uploads",
-          public_folder: "/uploads"
-        }
-      });
-    </script>
+    <!-- Load Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </body>
 </html>
