@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CESS CMS — Content Manager</title>
+    <title>CESS CMS</title>
   </head>
 
   <body>
-    <!-- REQUIRED ROOT for Decap CMS -->
+    <!-- CMS ROOT -->
     <div id="nc-root"></div>
+
+    <!-- Disable Netlify Identity -->
+    <script>
+      window.netlifyIdentity = null;
+    </script>
 
     <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
