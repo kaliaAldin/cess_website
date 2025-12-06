@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: kaliaAldin/cess-website
+  repo: kaliaAldin/cess_website
   branch: main
-  auth_endpoint: /admin/oauth/index.php
+  base_url: "https://cess-sudan.com"
+  auth_endpoint: "admin/oauth/index.php"
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
