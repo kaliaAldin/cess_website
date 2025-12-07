@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CESS CMS</title>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CESS CMS</title>
+</head>
 
-  <body>
-    <div id="nc-root"></div>
+<body>
+  <div id="nc-root"></div>
 
-    <script>
-      // FORCE CMS TO IGNORE NETLIFY IDENTITY
-      window.netlifyIdentity = null;
-      window.CMS_ENV = { GITHUB_OAUTH: true };
-    </script>
+  <!-- Disable Netlify Identity -->
+  <script>
+    window.netlifyIdentity = null;
+  </script>
 
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
-  </body>
+  <!-- LISTENER FOR TOKEN FROM POPUP -->
+  <script>
+  window.addEventListener("message", event => {
+    if (event.data && event.data.token) {
+      console.log("TOKEN RECEIVED:", event.data.token);
+
+      localStorage.setItem("netlify-cms-user", JSON.stringify({
+        backendName: "github",
+        login: true,
+        token: event.data.token
+      }));
+
+      location.reload();
+    }
+  });
+  </script>
+
+  <!-- Load Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
+</body>
 </html>

@@ -2,18 +2,21 @@ backend:
   name: github
   repo: kaliaAldin/cess_website
   branch: main
+  base_url: https://cess-sudan.com
   auth_endpoint: /admin/oauth/index.php
   site_domain: cess-sudan.com
-  base_url: https://cess-sudan.com
+  
+# The CMS will work from the root of the repo, but your files are in cess-website/
+# So we need to adjust all paths accordingly
 
-media_folder: "public/uploads"
+media_folder: "cess-website/public/uploads"
 public_folder: "/uploads"
 
 collections:
   - name: "english"
     label: "English Content"
     files:
-      - file: "cess-website/src/data/en.json"
+      - file: "cess-website/src/en.json"  # Changed from cess-website/src/data/en.json
         label: "English Site Content"
         name: "en_content"
         fields:
@@ -117,7 +120,7 @@ collections:
   - name: "arabic"
     label: "Arabic Content"
     files:
-      - file: "cess-website/src/data/ar.json"
+      - file: "cess-website/src/Ar.json"  # Changed from cess-website/src/data/Ar.json
         label: "Arabic Site Content"
         name: "ar_content"
         fields:
