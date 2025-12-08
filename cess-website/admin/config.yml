@@ -2,219 +2,183 @@ backend:
   name: github
   repo: kaliaAldin/cess_website
   branch: main
-  base_url: https://cess-sudan.com
   auth_endpoint: /admin/oauth/index.php
+  base_url: https://cess-sudan.com
   site_domain: cess-sudan.com
-  
-# The CMS will work from the root of the repo, but your files are in cess-website/
-# So we need to adjust all paths accordingly
 
 media_folder: "cess-website/public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "english"
-    label: "English Content"
+  - name: english
+    label: English Content
     files:
-      - file: "cess-website/src/en.json"  # Changed from cess-website/src/data/en.json
-        label: "English Site Content"
-        name: "en_content"
+      - file: "cess-website/src/en.json"
+        name: en_content
+        label: English Site Content
+        format: json
         fields:
-          - label: "Hero Section"
-            name: hero
-            widget: object
-            fields:
-              - { label: "Title", name: title, widget: string }
-              - { label: "Text", name: text, widget: text }
+          - { name: hero, label: Hero, widget: object, fields: [
+              { name: title, label: Title, widget: string },
+              { name: text, label: Text, widget: markdown }
+            ]}
 
-          - label: "About Section"
-            name: about
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - { label: "Body", name: body, widget: text }
+          - { name: about, label: About, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+              { name: body, label: Body, widget: markdown }
+            ]}
 
-          - label: "Projects"
-            name: projects
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - label: "Project 1"
-                name: project_1
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 2"
-                name: project_2
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 3"
-                name: project_3
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 4"
-                name: project_4
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 5"
-                name: project_5
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 6"
-                name: project_6
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
+          - { name: projects, label: Projects, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
 
-          - label: "Publications"
-            name: publications
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - label: "Publication 1"
-                name: publication_1
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Description", name: description, widget: text }
-                  - { label: "Year", name: year, widget: string }
-                  - { label: "PDF Link", name: link, widget: string }
-              - label: "Publication 2"
-                name: publication_2
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Description", name: description, widget: text }
-                  - { label: "Year", name: year, widget: string }
-                  - { label: "PDF Link", name: link, widget: string }
-              - label: "Publication 3"
-                name: publication_3
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Description", name: description, widget: text }
-                  - { label: "Year", name: year, widget: string }
-                  - { label: "PDF Link", name: link, widget: string }
+              { name: project_1, label: Project 1, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
 
-          - label: "Contact Form Text"
-            name: contact
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - { label: "Email Label", name: email, widget: string }
-              - { label: "Message Label", name: message, widget: string }
-              - { label: "Send Button Text", name: send, widget: string }
-              - { label: "Success Message", name: success, widget: string }
-              - { label: "Error Message", name: error, widget: string }
+              { name: project_2, label: Project 2, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
 
-  - name: "arabic"
-    label: "Arabic Content"
+              { name: project_3, label: Project 3, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_4, label: Project 4, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_5, label: Project 5, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_6, label: Project 6, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]}
+            ]}
+
+          - { name: publications, label: Publications, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+
+              { name: publication_1, label: Publication 1, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: description, label: Description, widget: text },
+                { name: year, label: Year, widget: string },
+                { name: link, label: PDF Link, widget: string }
+              ]},
+
+              { name: publication_2, label: Publication 2, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: description, label: Description, widget: text },
+                { name: year, label: Year, widget: string },
+                { name: link, label: PDF Link, widget: string }
+              ]},
+
+              { name: publication_3, label: Publication 3, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: description, label: Description, widget: text },
+                { name: year, label: Year, widget: string },
+                { name: link, label: PDF Link, widget: string }
+              ]}
+            ]}
+
+          - { name: contact, label: Contact, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+              { name: email, label: Email Label, widget: string },
+              { name: message, label: Message Label, widget: string },
+              { name: send, label: Send Button, widget: string },
+              { name: success, label: Success Message, widget: string },
+              { name: error, label: Error Message, widget: string }
+            ]}
+
+  - name: arabic
+    label: Arabic Content
     files:
-      - file: "cess-website/src/Ar.json"  # Changed from cess-website/src/data/Ar.json
-        label: "Arabic Site Content"
-        name: "ar_content"
+      - file: "cess-website/src/ar.json"
+        name: ar_content
+        label: Arabic Site Content
+        format: json
         fields:
-          - label: "Hero Section"
-            name: hero
-            widget: object
-            fields:
-              - { label: "Title", name: title, widget: string }
-              - { label: "Text", name: text, widget: text }
-          - label: "About Section"
-            name: about
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - { label: "Body", name: body, widget: text }
-          - label: "Projects"
-            name: projects
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - label: "Project 1"
-                name: project_1
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 2"
-                name: project_2
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 3"
-                name: project_3
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 4"
-                name: project_4
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 5"
-                name: project_5
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
-              - label: "Project 6"
-                name: project_6
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Body", name: body, widget: text }
 
-          - label: "Publications"
-            name: publications
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - label: "Publication 1"
-                name: publication_1
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Description", name: description, widget: text }
-                  - { label: "Year", name: year, widget: string }
-                  - { label: "PDF Link", name: link, widget: string }
-              - label: "Publication 2"
-                name: publication_2
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Description", name: description, widget: text }
-                  - { label: "Year", name: year, widget: string }
-                  - { label: "PDF Link", name: link, widget: string }
-              - label: "Publication 3"
-                name: publication_3
-                widget: object
-                fields:
-                  - { label: "Header", name: header, widget: string }
-                  - { label: "Description", name: description, widget: text }
-                  - { label: "Year", name: year, widget: string }
-                  - { label: "PDF Link", name: link, widget: string }
+          - { name: hero, label: Hero, widget: object, fields: [
+              { name: title, label: Title, widget: string },
+              { name: text, label: Text, widget: markdown }
+            ]}
 
-          - label: "Contact Form Text"
-            name: contact
-            widget: object
-            fields:
-              - { label: "Heading", name: heading, widget: string }
-              - { label: "Email Label", name: email, widget: string }
-              - { label: "Message Label", name: message, widget: string }
-              - { label: "Send Button Text", name: send, widget: string }
-              - { label: "Success Message", name: success, widget: string }
-              - { label: "Error Message", name: error, widget: string }
+          - { name: about, label: About, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+              { name: body, label: Body, widget: markdown }
+            ]}
+
+          - { name: projects, label: Projects, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+
+              { name: project_1, label: Project 1, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_2, label: Project 2, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_3, label: Project 3, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_4, label: Project 4, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_5, label: Project 5, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]},
+
+              { name: project_6, label: Project 6, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: body, label: Body, widget: markdown }
+              ]}
+            ]}
+
+          - { name: publications, label: Publications, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+
+              { name: publication_1, label: Publication 1, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: description, label: Description, widget: text },
+                { name: year, label: Year, widget: string },
+                { name: link, label: PDF Link, widget: string }
+              ]},
+
+              { name: publication_2, label: Publication 2, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: description, label: Description, widget: text },
+                { name: year, label: Year, widget: string },
+                { name: link, label: PDF Link, widget: string }
+              ]},
+
+              { name: publication_3, label: Publication 3, widget: object, fields: [
+                { name: header, label: Header, widget: string },
+                { name: description, label: Description, widget: text },
+                { name: year, label: Year, widget: string },
+                { name: link, label: PDF Link, widget: string }
+              ]}
+            ]}
+
+          - { name: contact, label: Contact, widget: object, fields: [
+              { name: heading, label: Heading, widget: string },
+              { name: email, label: Email Label, widget: string },
+              { name: message, label: Message Label, widget: string },
+              { name: send, label: Send Button, widget: string },
+              { name: success, label: Success Message, widget: string },
+              { name: error, label: Error Message, widget: string }
+            ]}

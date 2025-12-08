@@ -187,8 +187,13 @@
   margin-top: 10px;
 }
 a {
-  color: #F4C229;
+  color: #0A1E3F;
+  text-decoration: none;
 
+}
+a:hover {
+  text-decoration: underline;
+  color: #F4C229;
 }
 
 

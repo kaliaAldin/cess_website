@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+
 import "./App.css";
 
-// i18n files
+// i18n
 import en from "./data/en.json";
 import ar from "./data/Ar.json";
 
@@ -14,54 +16,54 @@ import Footer from "./components/Footer.jsx";
 import GeometryBar from "./components/GeometryBar.jsx";
 import Ticker from "./components/Ticker.jsx";
 import Contact from "./components/contact.jsx";
-<link href='https://fonts.googleapis.com/css?family=Noto Sans Arabic' rel='stylesheet'></link>
 
-export default function App() {
+// NEW
+import BlogList from "./components/BlogList.jsx";
+import BlogPost from "./components/BlogPost.jsx";
 
+function AppContent() {
   const [lang, setLang] = useState("en");
-  const [menuOpen, setMenuOpen] = useState(false);  // NEW
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const t = lang === "en" ? en : ar;
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false); // close menu after click
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
+    setMenuOpen(false);
   };
 
   return (
     <div className={`site-wrapper ${lang === "ar" ? "rtl" : ""}`}>
-
-      {/* Sticky elements */}
       <div className="always-ltr">
         <GeometryBar />
         <Ticker />
       </div>
 
-      {/* Language + Menu Buttons */}
       <div className="top-buttons">
-
-        {/* Hamburger Menu */}
-        <button 
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
 
-        {/* Language Switch */}
-        <button 
+        <button
           className="lang-switch"
           onClick={() => setLang(lang === "en" ? "ar" : "en")}
         >
           {lang === "en" ? "العربية" : "English"}
         </button>
-
       </div>
 
-      {/* Dropdown Menu */}
       {menuOpen && (
         <div className={`menu-dropdown ${lang === "ar" ? "rtl" : ""}`}>
           <button onClick={() => scrollToSection("about")}>
@@ -74,19 +76,37 @@ export default function App() {
             {lang === "en" ? "Publications" : "المنشورات"}
           </button>
           <button onClick={() => scrollToSection("contact")}>
-      {lang === "en" ? "Contact Us" : "تواصل معنا"}
-    </button>
-
+            {lang === "en" ? "Contact Us" : "تواصل معنا"}
+          </button>
         </div>
       )}
 
-      {/* Content */}
-      <Hero text={t.hero} lang={lang} />
-      <About text={t.about} lang={lang} />
-      <Projects text={t.projects} lang={lang} />
-      <Publications text={t.publications} lang={lang} />
-      <Contact text={t.contact} lang={lang} />
-      <Footer text={t.footer} lang={lang} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero text={t.hero} lang={lang} />
+              <About text={t.about} lang={lang} />
+              <Projects text={t.projects} lang={lang} />
+              <Publications text={t.publications} lang={lang} />
+              <Contact text={t.contact} lang={lang} />
+              <Footer text={t.footer} lang={lang} />
+            </>
+          }
+        />
+
+        <Route path="/blog" element={<BlogList lang={lang} />} />
+        <Route path="/blog/:id" element={<BlogPost lang={lang} />} />
+      </Routes>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }

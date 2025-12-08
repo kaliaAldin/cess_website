@@ -1,0 +1,31 @@
+{
+  "ticker_1": {
+    "text": "Latest Updates · New Research Outputs · Extractivism Studies · Environmental Justice · Community Reports ·"
+  },
+  "ticker_2": {
+    "segments": [
+      {
+        "type": "text",
+        "value": "New Publication: "
+      },
+      {
+        "type": "link",
+        "label": "Under the Surface",
+        "url": "#publications"
+      },
+      {
+        "type": "text",
+        "value": " · Upcoming Webinar — Dec 6, 2025: CSR, Land Rights & Gold Mining · "
+      },
+      {
+        "type": "link",
+        "label": "Register Here",
+        "url": "https://forms.gle/fwiFyoz3rNZ6bscc9"
+      },
+      {
+        "type": "text",
+        "value": " · "
+      }
+    ]
+  }
+}

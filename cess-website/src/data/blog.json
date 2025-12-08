@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title_en": "Environmental Justice in Sudan",
+      "title_ar": "العدالة البيئية في السودان",
+      "preview_en": "A short reflection on environmental violence...",
+      "preview_ar": "تأمل قصير حول العنف البيئي...",
+      "body_en": "Full article text goes here...",
+      "body_ar": "النص الكامل للمقال هنا...",
+      "author_en": "Mohamed Salah",
+      "author_ar": "محمد صلاح"
+    },
+    {
+      "id": "2",
+      "title_en": "Gold Extraction & War",
+      "title_ar": "تعدين الذهب والحرب",
+      "preview_en": "How gold extraction fuels conflict...",
+      "preview_ar": "كيف يساهم استخراج الذهب في تأجيج الصراع...",
+      "body_en": "Full research commentary...",
+      "body_ar": "النص الكامل للتحليل...",
+      "author_en": "CESS Research Team",
+      "author_ar": "فريق أبحاث CESS"
+    }
+  ]
+}

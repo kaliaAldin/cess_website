@@ -7,32 +7,26 @@
 </head>
 
 <body>
+  <!-- REQUIRED ROOT -->
   <div id="nc-root"></div>
 
-  <!-- Disable Netlify Identity -->
   <script>
+    // Disable Netlify Identity
     window.netlifyIdentity = null;
-  </script>
 
-  <!-- LISTENER FOR TOKEN FROM POPUP -->
-  <script>
-  window.addEventListener("message", event => {
-    if (event.data && event.data.token) {
-      console.log("TOKEN RECEIVED:", event.data.token);
-
-      localStorage.setItem("netlify-cms-user", JSON.stringify({
-        backendName: "github",
-        login: true,
-        token: event.data.token
-      }));
-
-      location.reload();
+    // Auto-login using the stored token
+    const userJSON = localStorage.getItem("netlify-cms-user");
+    if (userJSON) {
+      try {
+        const user = JSON.parse(userJSON);
+        window.CMS_USER = user; // Decap reads this automatically
+      } catch (e) {}
     }
-  });
   </script>
 
   <!-- Load Decap CMS -->
   <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 
+  <!-- NOTHING ELSE. CMS auto-initializes. -->
 </body>
 </html>

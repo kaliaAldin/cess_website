@@ -1,34 +1,44 @@
 import React from "react";
+import tickerData from "../data/ticker.json";
 import "./Ticker.css";
 
 export default function Ticker() {
+  const t1 = tickerData.ticker_1.text;
+  const segments = tickerData.ticker_2.segments;
+
   return (
     <div className="ticker-wrapper">
 
-      {/* TICKER 1 — Right → Left */}
+      {/* Ticker 1 */}
       <div className="ticker ticker-blue">
         <div className="ticker-content move-right">
-          <span>
-            Latest Updates · New Research Outputs · Extractivism Studies · Environmental Justice · Community Reports ·
-          </span>
+          <span>{t1}</span>
         </div>
       </div>
 
-      {/* TICKER 2 — Left → Right */}
+      {/* Ticker 2 */}
       <div className="ticker ticker-yellow">
         <div className="ticker-content move-left">
           <span>
-            New Publication: <a href="#publications" className="ticker-link">Under the Surface</a> · 
-            Upcoming Webinar — Dec 6, 2025: CSR, Land Rights & Gold Mining · 
-            <a 
-              href="https://forms.gle/fwiFyoz3rNZ6bscc9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ticker-link"
-            >
-              Register Here
-            </a>
-            ·
+            {segments.map((seg, i) => {
+              if (seg.type === "text") {
+                return <span key={i}>{seg.value}</span>;
+              }
+              if (seg.type === "link") {
+                return (
+                  <a
+                    key={i}
+                    href={seg.url}
+                    className="ticker-link"
+                    target={seg.url.startsWith("http") ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                  >
+                    {seg.label}
+                  </a>
+                );
+              }
+              return null;
+            })}
           </span>
         </div>
       </div>

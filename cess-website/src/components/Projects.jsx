@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 import MapImage from "../assets/map_project.png";
 import PublicationImage from "../assets/childLabour.jpg";
@@ -72,17 +73,19 @@ export default function Projects({ text, lang }) {
 
         {/* PROJECT 3 */}
         <div className="project-card">
-          <img src={PublicationImage} alt="" className="project-image" />
-          <h3>{text.project_3.header}</h3>
+          <Link to="/blog" className="card-link">
+    <img src={PublicationImage} alt="" className="project-image" />
+    <h3>{text.project_3.header}</h3>
 
-          <p>{getPreview(text.project_3.body, expanded.p3)}</p>
-
+    <p>{getPreview(text.project_3.body, expanded.p3)}</p>
+  </Link>
           {text.project_3.body.length > limit && (
             <button
               className="see-more-btn"
               onClick={() => setExpanded({ ...expanded, p3: !expanded.p3 })}
             >
               {expanded.p3 ? less : more}
+              
             </button>
           )}
         </div>
