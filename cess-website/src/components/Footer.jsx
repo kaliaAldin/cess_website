@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <img src={logoAR} alt="CESS Arabic Logo" className="logo-footer" />
       <p>© 2025 — Center for Environmental & Social Studies</p>
-      <p>Khartoum -Nairobi -Cairo —Paris -Berlin </p>
+      <p>Khartoum -Kampala -Cairo —Paris -Berlin </p>
     </footer>
   );
 }

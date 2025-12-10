@@ -19,7 +19,7 @@
     },
     "project_3": {
       "header": "Blog and Readings",
-      "body": "We invite experts, activists, and community members to contribute articles, essays, and multimedia content that shed light on issues of environmental and social justice in Sudan."
+      "body": "The CESS Blog Series is a multilingual platform designed to make political-economic, environmental, and social analysis accessible to a wide audience in Sudan and the region. Unlike long-form research outputs, the blog offers short, sharp reflections—ranging from 800 to 1500 words—on extractivism, agrarian change, labour, conflict dynamics, and broader social questions. It serves as a space where researchers, farmers, miners, writers, and community voices can contribute timely commentary, creative pieces, and grounded observations from across Sudan.\nThe platform functions both as a public educational tool and as an experimental space for testing new ideas that lack existing research. It allows CESS to simplify complex debates, revisit and reframe earlier studies, and collaborate with diverse contributors. The blog follows a structured editorial and translation process to ensure clarity, quality, and bilingual accessibility, and it publishes one post each week to maintain continuous engagement.\n\nThrough this series, CESS aims to broaden public understanding of resource politics, rural transformation, and everyday struggles shaped by Sudan’s wider political economy. By amplifying varied perspectives and \nThe CESS Blog Series is a multilingual platform designed to make political-economic, environmental, and social analysis accessible to a wide audience in Sudan and the region. Unlike long-form research outputs, the blog offers short, sharp reflections—ranging from 800 to 1500 words—on extractivism, agrarian change, labour, conflict dynamics, and broader social questions. It serves as a space where researchers, farmers, miners, writers, and community voices can contribute timely commentary, creative pieces, and grounded observations from across Sudan.\nThe platform functions both as a public educational tool and as an experimental space for testing new ideas that lack existing research. It allows CESS to simplify complex debates, revisit and reframe earlier studies, and collaborate with diverse contributors. The blog follows a structured editorial and translation process to ensure clarity, quality, and bilingual accessibility, and it publishes one post each week to maintain continuous engagement.\n\nThrough this series, CESS aims to broaden public understanding of resource politics, rural transformation, and everyday struggles shaped by Sudan’s wider political economy. By amplifying varied perspectives and"
     },
     "project_4": {
       "header": "CONFLICT GOLD",
@@ -42,14 +42,12 @@
       "year": "2024",
       "link": "/pdfs/Fuel of War and Resource Depletion.pdf"
     },
-"publication_2": {
-  "header": "Under the Surface: Corporate Social Responsibility and Land Rights in Kordofan",
-  "description": "Research report",
-  "year": "2025",
-  "link": "/pdfs/Under-The_Surface_English.pdf"
-}
-
-,
+    "publication_2": {
+      "header": "Under the Surface: Corporate Social Responsibility and Land Rights in Kordofan",
+      "description": "Research report",
+      "year": "2025",
+      "link": "/pdfs/Under-The_Surface_English.pdf"
+    },
     "publication_3": {
       "header": "Fuel of War and Resource Depletion",
       "description": "Research paper-Coming Soon",
@@ -65,5 +63,4 @@
     "success": "Message sent successfully!",
     "error": "Something went wrong. Please try again."
   }
-
 }

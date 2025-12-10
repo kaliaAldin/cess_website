@@ -1,12 +1,12 @@
 {
   "ticker_1": {
-    "text": "Latest Updates · New Research Outputs · Extractivism Studies · Environmental Justice · Community Reports ·"
+    "text": "Latest Updates · New Research Outputs · Extractivism Studies · Environmental Justice · Community Report"
   },
   "ticker_2": {
     "segments": [
       {
         "type": "text",
-        "value": "New Publication: "
+        "value": "New Publication:"
       },
       {
         "type": "link",
@@ -15,16 +15,12 @@
       },
       {
         "type": "text",
-        "value": " · Upcoming Webinar — Dec 6, 2025: CSR, Land Rights & Gold Mining · "
+        "value": " -New blog Article: "
       },
       {
         "type": "link",
-        "label": "Register Here",
-        "url": "https://forms.gle/fwiFyoz3rNZ6bscc9"
-      },
-      {
-        "type": "text",
-        "value": " · "
+        "label": "What it is mean RSF taking Heglig",
+        "url": "/blog/1"
       }
     ]
   }

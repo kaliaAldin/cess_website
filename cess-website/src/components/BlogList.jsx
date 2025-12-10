@@ -7,7 +7,7 @@ export default function BlogList({ lang }) {
   const posts = blogData.posts;
 
   return (
-    <section className="blog-list">
+    <section id="blog" className="blog-list">
       <h2>{lang === "en" ? "Blog and Readings" : "المدونة والقراءات"}</h2>
 
       <div className="blog-grid">

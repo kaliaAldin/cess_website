@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import Pdficon from "../assets/pdf-svgrepo-com.png";
 
 export default function Publications({text}) {
   return (
@@ -16,7 +17,8 @@ export default function Publications({text}) {
   rel="noopener noreferrer"
   className="pdf-link"
 >
-            <span className="pub-meta">{text.publication_1.description} — {text.publication_1.year}</span></a>
+            <span className="pub-meta">{text.publication_1.description} — {text.publication_1.year}</span>
+            <img  className="pdf-icon" src={Pdficon} alt="PDF icon" /></a>
           </div>
 
           <div className="pub-item">
@@ -27,7 +29,8 @@ export default function Publications({text}) {
   rel="noopener noreferrer"
   className="pdf-link"
 >
-            <span className="pub-meta">{text.publication_2.description} — {text.publication_2.year}</span></a>
+            <span className="pub-meta">{text.publication_2.description} — {text.publication_2.year}</span>
+            <img  className="pdf-icon" src={Pdficon} alt="PDF icon" /></a>
           </div>
         </div>
       </section>

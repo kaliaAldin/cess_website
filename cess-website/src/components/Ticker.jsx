@@ -1,6 +1,7 @@
 import React from "react";
 import tickerData from "../data/ticker.json";
 import "./Ticker.css";
+import "../App.css";
 
 export default function Ticker() {
   const t1 = tickerData.ticker_1.text;

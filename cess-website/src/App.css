@@ -223,6 +223,11 @@ a:hover {
   font-family: 'JetBrains Mono', monospace !important;
   color: rgb(252, 207, 6);
 }
+.pdf-icon {
+  width: 20px;
+  height: auto;
+  margin-left: 8px;
+}
 
 /* Dropdown (auto height + responsive width) */
 .menu-dropdown {
