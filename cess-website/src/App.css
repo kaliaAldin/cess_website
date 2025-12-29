@@ -32,7 +32,7 @@
   font-size: 1.25rem;
   max-width: 750px;
   color: #333;
-  text-align: justify;
+  text-align: left;
   word-spacing: -5px;
   
 }
@@ -53,7 +53,7 @@
 .section p {
   font-size: 1.5 rem;
   color: #444;
-  text-align: justify;
+  text-align: left;
  
  
   
@@ -108,7 +108,12 @@
   
   font-size: larger;
 }
-
+.blog-card{
+  border : 1px solid #0A1E3F;
+  border-radius: 2px;
+  padding: 12px;
+  margin-bottom: 5px;
+}
 /* ——————————————————————————
    FOOTER
 —————————————————————————— */
@@ -117,10 +122,11 @@
   padding: 20px 0 80px;
   margin-top: 2vh;
   border-top: 1px solid #ddd;
+  font-size: 16px;
 }
 
 .logo-footer {
-  width: 20vw;
+  width: 12rem;
   opacity: 0.85;
   align-items: first baseline;
   object-fit: contain;
@@ -207,10 +213,10 @@ a:hover {
 
 .top-buttons {
   position: fixed;
-  top: 11vh;
+  top: 10vh;
   right: 2vw;
   display: flex;
-  gap: 10px;
+  gap: 0.5vh;
   z-index: 99999;
 }
 
@@ -218,7 +224,7 @@ a:hover {
   font-size: 2rem;
   background: none;
   border: 1px solid #333;
-  padding: 6px 10px;
+  
   cursor: pointer;
   font-family: 'JetBrains Mono', monospace !important;
   color: rgb(252, 207, 6);
@@ -232,8 +238,8 @@ a:hover {
 /* Dropdown (auto height + responsive width) */
 .menu-dropdown {
   position: fixed;
-  top: calc(11vh + 50px);
-  right: 4vw;
+  top: calc(10vh + 50px);
+  right: 2vw;
 
   background: #0A1E3F;
   color: rgb(252, 207, 6);
@@ -252,7 +258,7 @@ a:hover {
   overflow-x: hidden;
 
   height: auto;
-  opacity: 0.95;
+  opacity: 0.8;
 }
 
 
@@ -280,7 +286,7 @@ a:hover {
 .site-wrapper:not(.rtl) .hero-text {
   word-spacing: -5px;        /* normal English spacing */
   letter-spacing: 0px; 
-  text-align: left; 
+  text-align: justify; 
   font-size: 1.2rem;    /* keep letters normal */
 }
 
@@ -290,12 +296,40 @@ a:hover {
   word-spacing: 2px;        /* Arabic prefers *more* spacing */
   letter-spacing: 0.5px;    /* slightly more readable */
   line-height: 1.8;  
-  text-align: right; 
+  text-align: justify; 
   font-size: 1.4rem;   
   font-family: 'Noto Sans Arabic', sans-serif; /* Arabic needs more line height */
 }
 
+/* blog bosts */
+.blog-post {
+ 
+  margin: 0 auto;
+  padding: 1vw;
+  padding-top: 0;
+}
 
+.blog-body {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+ 
+}
+.author{
+  color: #0A1E3F;
+  font-weight: bold;
+}
+
+.blog-body h2 { font-size: 1.8rem; font-weight: 800; margin: 1.2rem 0 0.6rem; }
+.blog-body h3 { font-size: 1.4rem; font-weight: 800; margin: 1.1rem 0 0.5rem; }
+.blog-body h4 { font-size: 1.15rem; font-weight: 800; margin: 1rem 0 0.4rem; }
+
+.blog-body p  { margin: 0.4rem 0; line-height: 1.7; }
+.blog-body .blog-space { height: 0.8rem; }
+
+.blog-body .blog-ul { margin: 0.4rem 0 0.8rem 1.2rem; }
+.blog-body .blog-ul li { margin: 0.25rem 0; }
 
 
 /* RTL flip for menu */
@@ -326,6 +360,46 @@ a:hover {
   .hero-text {
     font-size: 1rem;
   }
+  .lang-switch {
+  position: fixed;
+  top: 1vh;
+  right: 2vw;
+  padding: 6px 14px;
+  background: #0A1E3F;
+  color: rgb(252, 207, 6);
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  z-index: 0;
+}
+.top-buttons {
+  position: fixed;
+  top: 5vh;
+  }
+  .menu-dropdown {
+    top: calc(5vh + 50px);
+  }
+  .blog-body {
+font-size: 14px;
 
+}
+.site-wrapper:not(.rtl) p,
+.site-wrapper:not(.rtl) .hero-text {
+  word-spacing: -5px;        /* normal English spacing */
+  letter-spacing: 0px; 
+  text-align: left; 
+  font-size: 14px;    /* keep letters normal */
+}
+
+/* Arabic spacing (RTL) */
+.site-wrapper.rtl p,
+.site-wrapper.rtl .hero-text {
+  word-spacing: 2px;        /* Arabic prefers *more* spacing */
+  letter-spacing: 0.5px;    /* slightly more readable */
+  line-height: 1.8;  
+  text-align: right; 
+  font-size:16px;   
+  font-family: 'Noto Sans Arabic', sans-serif; /* Arabic needs more line height */
+}
 
 }

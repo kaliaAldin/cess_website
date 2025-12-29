@@ -60,7 +60,7 @@ function AppContent() {
           className="lang-switch"
           onClick={() => setLang(lang === "en" ? "ar" : "en")}
         >
-          {lang === "en" ? "العربية" : "English"}
+          {lang === "en" ? "ع" : "En"}
         </button>
       </div>
 

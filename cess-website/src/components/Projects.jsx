@@ -3,7 +3,7 @@ import "../App.css";
 import { Link } from "react-router-dom";
 
 import MapImage from "../assets/map_project.png";
-import PublicationImage from "../assets/childLabour.jpg";
+import PublicationImage from "../assets/mine3.png";
 import broadCastImage from "../assets/mine2.png";
 import ConflictImage from "../assets/mine4.png";
 

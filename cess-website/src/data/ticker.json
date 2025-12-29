@@ -15,12 +15,21 @@
       },
       {
         "type": "text",
-        "value": " -New blog Article: "
+        "value": " - New blog Article: "
       },
       {
         "type": "link",
-        "label": "What it is mean RSF taking Heglig",
-        "url": "/blog/1"
+        "label": "War and Agriculture in Sudan",
+        "url": "/blog/4"
+      },
+      {
+        "type": "text",
+        "value": " - New blog Article: "
+      },
+      {
+        "type": "link",
+        "label": "A Parallel Front for Rejecting War and Building Peace",
+        "url": "/blog/3"
       }
     ]
   }

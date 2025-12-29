@@ -8,10 +8,21 @@ import subprocess
 # ======================================================================
 
 def enable_paste(widget):
-    widget.bind("<Control-v>", lambda e: widget.event_generate("<<Paste>>"))
-    widget.bind("<Control-V>", lambda e: widget.event_generate("<<Paste>>"))
-    widget.bind("<Command-v>", lambda e: widget.event_generate("<<Paste>>"))  # macOS
-    widget.bind("<Button-3>", lambda e: widget.event_generate("<<Paste>>"))   # right-click paste
+    # Override default paste
+    def paste(event=None):
+        try:
+            widget.insert("insert", widget.clipboard_get())
+        except:
+            pass
+        return "break"  # stop Tkinter from pasting a second time
+
+    widget.bind("<Control-v>", paste)
+    widget.bind("<Control-V>", paste)
+    widget.bind("<Command-v>", paste)   # macOS
+
+    # Optional: right-click paste
+    widget.bind("<Button-3>", paste)
+
 
 
 # ======================================================================
@@ -48,7 +59,7 @@ ticker_data = load_json(TICKER_PATH)
 
 root = tk.Tk()
 root.title("CESS Local CMS")
-root.geometry("1100x1000")
+root.geometry("1000x1000")
 
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True)
@@ -223,33 +234,76 @@ tk.Button(frame_ar, text="Save Arabic", command=save_ar).pack(pady=10)
 #======================================================================================
 #Tap projects
 #======================================================================================
-frame_projects = ttk.Frame(notebook)
-notebook.add(frame_projects, text="projects")
-project_fields = {}
+#Creating English fields
+frame_projects_En = ttk.Frame(notebook)
+notebook.add(frame_projects_En, text="projects English")
+project_fields_En = {}
 project_Endata = en_data["projects"]
-project_fields["project_1_header"] = create_text_field(frame_projects, "Project-1 Header", project_Endata ["project_1"]["header"])
-project_fields["project_1_body"] = create_text_field(frame_projects, "Project-1 details", project_Endata ["project_1"]["body"])
-project_fields["project_2_header"] = create_text_field(frame_projects, "Project-2 Header", project_Endata ["project_2"]["header"])
-project_fields["project_2_body"] = create_text_field(frame_projects, "Project-2 details", project_Endata ["project_2"]["body"])
-project_fields["project_3_header"] = create_text_field(frame_projects, "Project-3 Header", project_Endata ["project_3"]["header"])
-project_fields["project_3_body"] = create_text_field(frame_projects, "Project-3 details", project_Endata ["project_3"]["body"])
-project_fields["project_4_header"] = create_text_field(frame_projects, "Project-4 Header", project_Endata ["project_4"]["header"])
-project_fields["project_4_body"] = create_text_field(frame_projects, "Project-4 details", project_Endata ["project_4"]["body"])
 
-def save_project():
-    project_Endata["project_1"]["header"] = project_fields["project_1_header"].get("1.0", "end").strip()
-    project_Endata["project_1"]["body"] = project_fields["project_1_body"].get("1.0", "end").strip()
-    project_Endata["project_2"]["header"] = project_fields["project_2_header"].get("1.0", "end").strip()
-    project_Endata["project_2"]["body"] = project_fields["project_2_body"].get("1.0", "end").strip()
-    project_Endata["project_3"]["header"] = project_fields["project_3_header"].get("1.0", "end").strip()
-    project_Endata["project_3"]["body"] = project_fields["project_3_body"].get("1.0", "end").strip()
-    project_Endata["project_4"]["header"] = project_fields["project_4_header"].get("1.0", "end").strip()
-    project_Endata["project_4"]["body"] = project_fields["project_4_body"].get("1.0", "end").strip()
+project_fields_En["projecten_1_header"] = create_text_field(frame_projects_En , "Project-1 English Header", project_Endata ["project_1"]["header"])
+project_fields_En["projecten_1_body"] = create_text_field(frame_projects_En, "Project-1 English details", project_Endata ["project_1"]["body"])
+
+project_fields_En["projecten_2_header"] = create_text_field(frame_projects_En, "Project-2 Header", project_Endata ["project_2"]["header"])
+project_fields_En["projecten_2_body"] = create_text_field(frame_projects_En, "Project-2 details", project_Endata ["project_2"]["body"])
+project_fields_En["projecten_3_header"] = create_text_field(frame_projects_En, "Project-3 Header", project_Endata ["project_3"]["header"])
+project_fields_En["projecten_3_body"] = create_text_field(frame_projects_En, "Project-3 details", project_Endata ["project_3"]["body"])
+project_fields_En["projecten_4_header"] = create_text_field(frame_projects_En, "Project-4 Header", project_Endata ["project_4"]["header"])
+project_fields_En["projecten_4_body"] = create_text_field(frame_projects_En, "Project-4 details", project_Endata ["project_4"]["body"])
+
+def save_en_project():
+    project_Endata["project_1"]["header"] = project_fields_En["projecten_1_header"].get("1.0", "end").strip()
+    #project_Ardata["project_1"]["header"] = project_fields["projecteAr_1_header"].get("1.0", "end").strip()
+    project_Endata["project_1"]["body"] = project_fields_En["projecten_1_body"].get("1.0", "end").strip()
+    #project_Ardata["project_1"]["body"] = project_fields["projecteAr_1_body"].get("1.0", "end").strip()
+
+    project_Endata["project_2"]["header"] = project_fields_En["projecten_2_header"].get("1.0", "end").strip()
+    project_Endata["project_2"]["body"] = project_fields_En["projecten_2_body"].get("1.0", "end").strip()
+    project_Endata["project_3"]["header"] = project_fields_En["projecten_3_header"].get("1.0", "end").strip()
+    project_Endata["project_3"]["body"] = project_fields_En["projecten_3_body"].get("1.0", "end").strip()
+    project_Endata["project_4"]["header"] = project_fields_En["projecten_4_header"].get("1.0", "end").strip()
+    project_Endata["project_4"]["body"] = project_fields_En["projecten_4_body"].get("1.0", "end").strip()
 
     save_json(EN_PATH , en_data)
     messagebox.showinfo("Saved", "Project Change content saved.")
 
-tk.Button(frame_projects, text="Save Project", command=save_project).pack(pady=10)
+tk.Button(frame_projects_En, text="Save Project", command=save_en_project).pack(pady=10)
+
+#Creating Arabic Fields
+frame_projects_Ar = ttk.Frame(notebook)
+notebook.add(frame_projects_Ar, text="projects Arabic")
+project_fields_Ar= {}
+project_Ardata = ar_data["projects"]
+
+project_fields_Ar["projectAr_1_header"] = create_text_field(frame_projects_Ar, "Project-1 Arabic Header", project_Ardata ["project_1"]["header"])
+project_fields_Ar["projecteAr_1_body"] = create_text_field(frame_projects_Ar, "Project-1 Arabic details", project_Ardata ["project_1"]["body"])
+
+project_fields_Ar["projectAr_2_header"] = create_text_field(frame_projects_Ar, "Project-2 Arabic Header", project_Ardata ["project_2"]["header"])
+project_fields_Ar["projecteAr_2_body"] = create_text_field(frame_projects_Ar, "Project-2 Arabic details", project_Ardata ["project_2"]["body"])
+
+project_fields_Ar["projectAr_3_header"] = create_text_field(frame_projects_Ar, "Project-3 Arabic Header", project_Ardata ["project_3"]["header"])
+project_fields_Ar["projecteAr_3_body"] = create_text_field(frame_projects_Ar, "Project-3 Arabic details", project_Ardata ["project_3"]["body"])
+
+project_fields_Ar["projectAr_4_header"] = create_text_field(frame_projects_Ar, "Project-4 Arabic Header", project_Ardata ["project_4"]["header"])
+project_fields_Ar["projecteAr_4_body"] = create_text_field(frame_projects_Ar, "Project-4 Arabic details", project_Ardata ["project_4"]["body"])
+def save_ar_project():
+    project_Ardata["project_1"]["header"] = project_fields_Ar["projectAr_1_header"].get("1.0", "end").strip()
+    project_Ardata["project_1"]["body"] = project_fields_Ar["projecteAr_1_body"].get("1.0", "end").strip()
+    project_Ardata["project_2"]["header"] = project_fields_Ar["projectAr_2_header"].get("1.0", "end").strip()
+    project_Ardata["project_2"]["body"] = project_fields_Ar["projecteAr_2_body"].get("1.0", "end").strip()
+    project_Ardata["project_3"]["header"] = project_fields_Ar["projectAr_3_header"].get("1.0", "end").strip()
+    project_Ardata["project_3"]["body"] = project_fields_Ar["projecteAr_3_body"].get("1.0", "end").strip()
+    project_Ardata["project_4"]["header"] = project_fields_Ar["projectAr_4_header"].get("1.0", "end").strip()
+    project_Ardata["project_4"]["body"] = project_fields_Ar["projecteAr_4_body"].get("1.0", "end").strip()
+
+
+
+    save_json(AR_PATH, ar_data)
+
+    messagebox.showinfo("Saved", "Project Change content saved.")
+
+tk.Button(frame_projects_Ar, text="Save Project", command=save_ar_project).pack(pady=10)
+
+
 # ======================================================================
 #   TAB: BLOG MANAGER
 # ======================================================================
