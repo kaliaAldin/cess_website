@@ -371,6 +371,195 @@ def save_ar_project():
     messagebox.showinfo("Saved", "Project Change content saved.")
 
 tk.Button(frame_projects_Ar, text="Save Project", command=save_ar_project).pack(pady=10, padx=10, anchor="w")
+# ======================================================================
+#   TAB: PUBLICATIONS MANAGER (SCROLLABLE)  ✅ NEW
+#   Updates BOTH src/data/en.json and src/data/Ar.json
+# ======================================================================
+
+frame_pubs_outer, frame_pubs = make_scrollable_tab(notebook, "Publications")
+
+# ---- helpers to deal with publication_1, publication_2, ...
+def _pub_keys(data):
+    pubs = data.get("publications", {})
+    keys = [k for k in pubs.keys() if k.startswith("publication_")]
+    # Sort by numeric suffix if possible
+    def _num(k):
+        try:
+            return int(k.split("_")[-1])
+        except Exception:
+            return 10**9
+    return sorted(keys, key=_num)
+
+def _next_pub_key(en_data, ar_data):
+    keys = set(_pub_keys(en_data)) | set(_pub_keys(ar_data))
+    nums = []
+    for k in keys:
+        try:
+            nums.append(int(k.split("_")[-1]))
+        except Exception:
+            pass
+    nxt = (max(nums) + 1) if nums else 1
+    return f"publication_{nxt}"
+
+# ---- heading (optional but useful)
+ttk.Label(frame_pubs, text="Publications Heading (EN)").pack(anchor="w", padx=10, pady=(8, 2))
+pub_heading_en = scrolledtext.ScrolledText(frame_pubs, height=2, wrap="word")
+pub_heading_en.pack(fill="x", padx=10, pady=(0, 8))
+pub_heading_en.insert("1.0", en_data.get("publications", {}).get("heading", ""))
+enable_paste(pub_heading_en)
+
+ttk.Label(frame_pubs, text="Publications Heading (AR)").pack(anchor="w", padx=10, pady=(2, 2))
+pub_heading_ar = scrolledtext.ScrolledText(frame_pubs, height=2, wrap="word")
+pub_heading_ar.pack(fill="x", padx=10, pady=(0, 10))
+pub_heading_ar.insert("1.0", ar_data.get("publications", {}).get("heading", ""))
+enable_paste(pub_heading_ar)
+
+# ---- selector
+ttk.Label(frame_pubs, text="Select Publication Key (publication_1, publication_2, ...)").pack(anchor="w", padx=10, pady=(8, 2))
+pub_selector = ttk.Combobox(frame_pubs, values=_pub_keys(en_data), state="readonly")
+pub_selector.pack(fill="x", padx=10, pady=(0, 10))
+
+# ---- fields (EN + AR side by side feel, stacked for simplicity)
+pub_fields = {}
+
+def _pub_field(label, height=2):
+    ttk.Label(frame_pubs, text=label).pack(anchor="w", padx=10)
+    box = scrolledtext.ScrolledText(frame_pubs, height=height, wrap="word")
+    box.pack(fill="x", padx=10, pady=4)
+    enable_paste(box)
+    return box
+
+# English fields
+pub_fields["en_header"] = _pub_field("EN • Header", height=2)
+pub_fields["en_description"] = _pub_field("EN • Description", height=3)
+pub_fields["en_year"] = _pub_field("EN • Year", height=1)
+pub_fields["en_link"] = _pub_field("EN • Link", height=2)
+
+# Arabic fields
+pub_fields["ar_header"] = _pub_field("AR • Header", height=2)
+pub_fields["ar_description"] = _pub_field("AR • Description", height=3)
+pub_fields["ar_year"] = _pub_field("AR • Year", height=1)
+pub_fields["ar_link"] = _pub_field("AR • Link", height=2)
+
+def load_publication(event=None):
+    key = pub_selector.get()
+    if not key:
+        return
+
+    en_pub = en_data.get("publications", {}).get(key, {})
+    ar_pub = ar_data.get("publications", {}).get(key, {})
+
+    # clear then fill
+    for k in pub_fields:
+        pub_fields[k].delete("1.0", "end")
+
+    pub_fields["en_header"].insert("1.0", en_pub.get("header", ""))
+    pub_fields["en_description"].insert("1.0", en_pub.get("description", ""))
+    pub_fields["en_year"].insert("1.0", str(en_pub.get("year", "")))
+    pub_fields["en_link"].insert("1.0", en_pub.get("link", ""))
+
+    pub_fields["ar_header"].insert("1.0", ar_pub.get("header", ""))
+    pub_fields["ar_description"].insert("1.0", ar_pub.get("description", ""))
+    pub_fields["ar_year"].insert("1.0", str(ar_pub.get("year", "")))
+    pub_fields["ar_link"].insert("1.0", ar_pub.get("link", ""))
+
+pub_selector.bind("<<ComboboxSelected>>", load_publication)
+
+def add_new_publication():
+    # Ensure publications containers exist
+    en_data.setdefault("publications", {}).setdefault("heading", en_data.get("publications", {}).get("heading", "Publications"))
+    ar_data.setdefault("publications", {}).setdefault("heading", ar_data.get("publications", {}).get("heading", "المنشورات"))
+
+    new_key = _next_pub_key(en_data, ar_data)
+
+    en_data["publications"][new_key] = {
+        "header": "",
+        "description": "",
+        "year": "",
+        "link": ""
+    }
+    ar_data["publications"][new_key] = {
+        "header": "",
+        "description": "",
+        "year": "",
+        "link": ""
+    }
+
+    # refresh selector values (prefer EN list)
+    pub_selector["values"] = _pub_keys(en_data)
+    pub_selector.set(new_key)
+    load_publication()
+
+    messagebox.showinfo("New Publication", f"Created {new_key} (EN+AR). Fill fields then Save.")
+
+def delete_publication():
+    key = pub_selector.get()
+    if not key:
+        messagebox.showerror("Error", "Select a publication first.")
+        return
+
+    if not messagebox.askyesno("Confirm", f"Delete {key} from BOTH EN and AR?"):
+        return
+
+    if "publications" in en_data and key in en_data["publications"]:
+        del en_data["publications"][key]
+    if "publications" in ar_data and key in ar_data["publications"]:
+        del ar_data["publications"][key]
+
+    save_json(EN_PATH, en_data)
+    save_json(AR_PATH, ar_data)
+
+    pub_selector["values"] = _pub_keys(en_data)
+    pub_selector.set("")
+
+    for k in pub_fields:
+        pub_fields[k].delete("1.0", "end")
+
+    messagebox.showinfo("Deleted", f"{key} deleted from EN+AR.")
+
+def save_publication():
+    key = pub_selector.get()
+    if not key:
+        messagebox.showerror("Error", "Select a publication first.")
+        return
+
+    # save headings too
+    en_data.setdefault("publications", {})
+    ar_data.setdefault("publications", {})
+    en_data["publications"]["heading"] = pub_heading_en.get("1.0", "end").strip()
+    ar_data["publications"]["heading"] = pub_heading_ar.get("1.0", "end").strip()
+
+    # ensure objects exist
+    en_data["publications"].setdefault(key, {})
+    ar_data["publications"].setdefault(key, {})
+
+    en_data["publications"][key]["header"] = pub_fields["en_header"].get("1.0", "end").strip()
+    en_data["publications"][key]["description"] = pub_fields["en_description"].get("1.0", "end").strip()
+    en_data["publications"][key]["year"] = pub_fields["en_year"].get("1.0", "end").strip()
+    en_data["publications"][key]["link"] = pub_fields["en_link"].get("1.0", "end").strip()
+
+    ar_data["publications"][key]["header"] = pub_fields["ar_header"].get("1.0", "end").strip()
+    ar_data["publications"][key]["description"] = pub_fields["ar_description"].get("1.0", "end").strip()
+    ar_data["publications"][key]["year"] = pub_fields["ar_year"].get("1.0", "end").strip()
+    ar_data["publications"][key]["link"] = pub_fields["ar_link"].get("1.0", "end").strip()
+
+    save_json(EN_PATH, en_data)
+    save_json(AR_PATH, ar_data)
+    messagebox.showinfo("Saved", f"{key} updated in EN+AR.")
+
+# ---- action buttons row
+pub_actions = ttk.Frame(frame_pubs)
+pub_actions.pack(fill="x", padx=10, pady=12)
+
+tk.Button(pub_actions, text="+ Add New Publication", command=add_new_publication).pack(side="left", padx=(0, 8))
+tk.Button(pub_actions, text="Delete Publication", fg="red", command=delete_publication).pack(side="left", padx=(0, 8))
+tk.Button(pub_actions, text="Save Publication", command=save_publication).pack(side="left")
+
+# ---- init selector list
+pub_selector["values"] = _pub_keys(en_data)
+if _pub_keys(en_data):
+    pub_selector.set(_pub_keys(en_data)[0])
+    load_publication()
 
 
 # ======================================================================
